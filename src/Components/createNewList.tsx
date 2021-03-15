@@ -26,6 +26,7 @@ const CreateNewList: FC = () => {
         }
 
         dispatch(addList(newList));
+        dispatch(setNotification(`New list("${newList.name}") created!`))
         setListName('');
     }
     return (
