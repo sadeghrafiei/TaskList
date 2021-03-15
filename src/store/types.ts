@@ -5,7 +5,7 @@ export const GET_LIST_BY_ID =  'GET_LIST_BY_ID';
 export const ADD_LIST ='ADD_LIST';
 export const DELETE_LIST = 'DELETE_LIST';
 export const UPDATE_LIST = 'UPDATE_LIST';
-export const SET_LISTID_TO_DELETE = 'SET_LIST';
+export const SET_LISTID_TO_DELETE = 'SET_LISTID_TO_DELETE';
 export const SET_LIST_TO_EDIT = 'SET_LIST_TO_EDIT';
 export const SET_SELECTED_LIST = 'SET_SELECTED_LIST';
 
@@ -137,7 +137,7 @@ interface SetNotificationAction {
 
 export type ListsAction = AddListAction | GetListsAction | GetListByIdAction |
 SetListToEditAction | DeleteListAction | UpdateListAction | SetSelectedListAction | AddTaskAction |
-DeleteTaskAction | SetTaskToDeleteAction | UnsetTaskToDeleteAction | EditTaskAction | SetTaskToEditAction | 
+DeleteTaskAction | SetTaskToDeleteAction | SetListIdToDeleteAction | UnsetTaskToDeleteAction | EditTaskAction | SetTaskToEditAction | 
 UnsetTaskToEditAction;
 
 export type NotificationAction = SetNotificationAction;
