@@ -1,8 +1,11 @@
-import { FC, useState, FormEvent } from 'react'
+import { FC, useState, FormEvent } from 'react';
+import { useDispatch } from "react-redux";
 
 import { List } from '../store/types';
+import { addList , setNotification } from "../store/actions";
 
 const CreateNewList: FC = () => {
+    const dispatch = useDispatch()
     const [listName, setListName] = useState('');
 
     const inputChangeHandler = (e: FormEvent<HTMLInputElement>) => {
@@ -21,6 +24,9 @@ const CreateNewList: FC = () => {
             name: listName,
             tasks: []
         }
+
+        dispatch(addList(newList));
+        setListName('');
     }
     return (
         <div className="card mb-5">
