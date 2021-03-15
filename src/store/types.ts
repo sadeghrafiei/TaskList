@@ -141,3 +141,25 @@ DeleteTaskAction | SetTaskToDeleteAction | UnsetTaskToDeleteAction | EditTaskAct
 UnsetTaskToEditAction;
 
 export type NotificationAction = SetNotificationAction;
+
+
+export interface ListState {
+    lists: Lists;
+    listIdToDelete: string;
+    listToEdit: List | null;
+    listById: List | null;
+    selectedList: List | null;
+    taskToDelete: {
+        task: Task;
+        list: List;
+    } | null;
+    taskToEdit: {
+        task: Task;
+        list: List;
+    } | null;
+}
+
+export interface NotificaionState {
+    message: string;
+    type: string;
+}
