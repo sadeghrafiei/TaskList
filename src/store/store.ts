@@ -1,8 +1,13 @@
-import { type } from 'os';
 import { createStore , combineReducers } from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-const rootReducer = combineReducers({});
+import listReducer from './reducers/listReducer'
+import notificaionReducer from './reducers/notificationReducer'
+
+const rootReducer = combineReducers({
+    list: listReducer,
+    notificaion: notificaionReducer
+});
 
 const store = createStore(rootReducer,composeWithDevTools());
 
