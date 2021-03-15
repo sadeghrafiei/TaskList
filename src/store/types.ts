@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export const GET_LISTS = 'GET_LISTS';
 export const GET_LIST_BY_ID =  'GET_LIST_BY_ID';
 export const ADD_LIST ='ADD_LIST';
@@ -132,3 +134,10 @@ interface SetNotificationAction {
         type: string;
     }
 }
+
+export type ListsAction = AddListAction | GetListsAction | GetListByIdAction |
+SetListToEditAction | DeleteListAction | UpdateListAction | SetSelectedListAction | AddTaskAction |
+DeleteTaskAction | SetTaskToDeleteAction | UnsetTaskToDeleteAction | EditTaskAction | SetTaskToEditAction | 
+UnsetTaskToEditAction;
+
+export type NotificationAction = SetNotificationAction;
