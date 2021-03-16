@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from "../store/store";
-import { getLists } from "../store/actions";
+import { getLists, setListToEdit , setListsIdToDelete} from "../store/actions";
 import { List } from "../store/types";
 
 const Lists: FC = () => {
@@ -11,6 +11,14 @@ const Lists: FC = () => {
     useEffect(() => {
         dispatch(getLists())
     }, [dispatch])
+
+    const setListToEditHandler = (id: string) => {
+        dispatch(setListToEdit(id))
+    }
+
+    const setListsIdToDeleteHandler = ( id: string ) => {
+        dispatch(setListsIdToDelete(id))
+    }
 
     return (
         <div className="panel is-primary">
@@ -23,8 +31,8 @@ const Lists: FC = () => {
                     <div>
                         {Object.values(lists).map((list: List) => {
                             return <div className="panel-block py-3" key={list.id}>
-                                <p>{list.name}</p>
-                                <span className="panel-icon has-text-danger">
+                                <p onClick={() => setListToEditHandler(list.id)}>{list.name}</p>
+                                <span className="panel-icon has-text-danger" onClick={() => setListsIdToDeleteHandler(list.id)}>
                                     <i className="fas fa-times-circle"></i>
                                 </span>
                             </div>
