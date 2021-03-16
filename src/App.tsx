@@ -5,9 +5,11 @@ import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import Notification from './Components/Notfication'
 import { RootState } from './store/store';
+import DeleteListModal from './Components/DeleteListModal';
 
 const App:FC = () => {
   const notificationMsg = useSelector((state: RootState) => state.notificaion.message)
+  const listIdToDelete =useSelector((state: RootState) => state.list.listIdToDelete)
 
   return(
     <div className="App">
@@ -20,6 +22,7 @@ const App:FC = () => {
       </div>
 
       <Notification msg={notificationMsg} />
+      {listIdToDelete && <DeleteListModal listId={listIdToDelete} />} 
     </div>
   )
   }
